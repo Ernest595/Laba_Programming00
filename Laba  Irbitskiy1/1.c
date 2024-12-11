@@ -1,5 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS
-
+/*
 //Задание 1
 
 
@@ -33,3 +33,4 @@ int main() {
         printf("%d\n", a[i]);
     return 0;
 }
+*/

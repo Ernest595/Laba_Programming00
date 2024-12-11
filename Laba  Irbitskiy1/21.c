@@ -1,6 +1,6 @@
 ﻿#define _CRT_SECURE_NO_WARNINGS
 
-
+/*
 
 //Задание 21
 
@@ -32,7 +32,7 @@ int main(void) {
 
 }
 
-
+*/
 
 
 

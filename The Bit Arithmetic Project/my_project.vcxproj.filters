@@ -15,25 +15,25 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="21.c">
+    <ClCompile Include="main.c">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="1.c">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="3.c">
+    <ClCompile Include="2.c">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="2.c">
+    <ClCompile Include="3.c">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="4.c">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="20.c">
+    <ClCompile Include="5.c">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="5.c">
+    <ClCompile Include="6.c">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="7.c">
@@ -43,6 +43,18 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="9.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="10.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="11A.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="11B.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="12.c">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

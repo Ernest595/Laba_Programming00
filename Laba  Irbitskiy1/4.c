@@ -1,5 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS
-
+/*
 //Задание4
 
 #include <stdio.h>
@@ -46,3 +46,4 @@ int main() {
 
     return 0;
 }
+*/

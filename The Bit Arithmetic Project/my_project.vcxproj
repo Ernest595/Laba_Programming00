@@ -24,6 +24,7 @@
     <ProjectGuid>{da7ee8f9-595d-4877-a15f-4531f4df447c}</ProjectGuid>
     <RootNamespace>myproject</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>The task of bit arithmetic</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -127,6 +128,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="1.c" />
+    <ClCompile Include="10.c" />
+    <ClCompile Include="11A.c" />
+    <ClCompile Include="11B.c" />
+    <ClCompile Include="12.c" />
+    <ClCompile Include="2.c" />
+    <ClCompile Include="3.c" />
+    <ClCompile Include="4.c" />
+    <ClCompile Include="5.c" />
+    <ClCompile Include="6.c" />
+    <ClCompile Include="7.c" />
+    <ClCompile Include="8.c" />
+    <ClCompile Include="9.c" />
     <ClCompile Include="main.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
