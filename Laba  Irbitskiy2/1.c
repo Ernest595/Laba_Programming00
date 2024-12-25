@@ -8,13 +8,51 @@
 
 int convert_decimal(int n,int r, char ** str);
 
+int subtract(int a, int b)
+{
+
+	return add(a, add(~b, 1));
+
+}
+
+
+int add(int a, int b)
+{
+	int carry;
+	while (b != 0)
+	{
+		carry = a & b;
+		a = a ^ b;
+		b = carry << 1;
+	}
+
+	return a;
+}
+
+int multiply(int a, int b)
+{
+	int result = 0;
+	while (b != 0)
+	{
+		if (b & 1)
+		{
+			result += a;
+		}
+		a <<= 1;
+		b >>= 1;
+	}
+
+	return result;
+}
+
+
 int main() {
 
 	int n, r;
 	char* ans;
 	int err;
 	printf("Enter number: ");
-	scanf("%d", &n)
+	scanf("%d", &n);
 	printf("Enter base (2^r - enter r): ");
 	scanf("%d", &r);
 
@@ -43,13 +81,18 @@ int convert_decimal(int n, int r, char** str) {
 	int base = 1 << r;
 		char* res;
 		int len = 0, j = 0, sign = 0;
+
+		if (str = NULL) {
+			return 0;
+
+		}
 	
 		if (base < 2 || base > 32) {
 			return INCORRECT_BASE;
 		}
 
 		if (n == 0) {
-					*str = (char*)malloc(2 * sizeof(char));
+					*str = (char*)malloc(multiply(2,sizeof(char)));
 					if (*str == NULL) { 
 						return MEMORY_ALLOCATE_ERROR; 
 					}
@@ -57,16 +100,17 @@ int convert_decimal(int n, int r, char** str) {
 					*str[1] = '\0';
 					return 0;
 				}
-		len = (log(abs(n)) / log(base)) + 1;
+		len = add((log(abs(n)) / log(base)), 1);
 		
 		if (n < 0)
 		{
 			sign = 1;
-			len++;
-			n = -n;
+			len=add(len,1);
+			n = multiply(n,-1);
+			
 		}
 		
-		*str = (char*)malloc((len + 1) * sizeof(char));
+		*str = (char*)malloc(multiply((add(len,1)), sizeof(char)));
 		if (*str == NULL)
 		{
 			return MEMORY_ALLOCATE_ERROR;
@@ -75,20 +119,20 @@ int convert_decimal(int n, int r, char** str) {
 		
 			if (n < 0) { *res = '-'; }
 		
-			res += len - sign;
+			res =add(res,( len - sign));
 			*res-- = 0;
 		
 			while (n > 0) {
-				j = n & (base - 1);
+				j = n & (subtract(base, 1));
 				if (j < 10) {
-					*res = j + '0';
+					*res = add(j, '0');
 				}
 				else {
-					*res = j + 'A' - 10;
+					*res = subtract( add(j , 'A'), 10);
 				}
 		
 				n >>= r;
-				res--;
+				res= subtract(res,1);
 			}
 			
 			return 0;

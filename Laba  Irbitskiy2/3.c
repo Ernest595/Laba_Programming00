@@ -15,7 +15,7 @@ int main(int argc, char* argv[]) {
 
 	printf("resources for free: %p %p %p\n\n", str, fptr1, str1);
 
-	err = free_resources('f', str, 'c', fptr1, 'f', str1, 'w', str, 'f', NULL);
+	err = free_resources((int)'f', str, (int)'c', fptr1, (int)'f', str1, NULL);
 
 	if (err != 0) {
 		printf("Error: \n");
@@ -32,18 +32,18 @@ int freeresources(int flag, ...) {
 	va_start(valist, flag);
 	while (1) {
 		arg = va_arg(valist, void*);
-		if (arg == 0) {
+		if (arg == NULL) {
 			return 0;
 		}
 		if (a == 'f') {
-			printf("freeing memory at %p\n", arg);
+			
 			free(arg);
-		}else if  (a = 'c') {
-			printf("closing file var at %p\n", arg);
+		}else if  (a == 'c') {
+			
 			fclose((FILE*)arg);
 			
 		}else{
-			printf("Error:\n", a);
+			
 			return INVALID_FLAG;
 		}
 		a = va_arg(valist, int);
