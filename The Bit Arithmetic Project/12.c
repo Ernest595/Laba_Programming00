@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+/*
 #define MAX_FILENAME_LENGTH (255)
 
 int choose_mode();
@@ -51,3 +51,4 @@ int encrypt_file_(FILE* fptr, FILE* target_fptr) {
     }
     return 0;
 }
+*/

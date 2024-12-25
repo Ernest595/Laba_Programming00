@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <math.h>
-
+/*
 int ones_line(int n) {
 	int i, res = 0;
 
@@ -48,3 +48,4 @@ int main() {
 	printb(res);
 	return 0;
 }
+*/

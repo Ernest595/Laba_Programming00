@@ -2,7 +2,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #define LEFT_MOVE(nunber, k) (n << k)
 #define RIGHT_MOVE(nunber, k) (n >> k)
-
+/*
 #include <stdio.h>
 
 int main() {
@@ -16,3 +16,4 @@ int main() {
 	printf("Result 2: %d\n", RIGHT_MOVE(n, k));
 	return 0;
 }
+*/

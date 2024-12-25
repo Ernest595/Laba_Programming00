@@ -42,6 +42,7 @@ int multiply_matrices(
         int cols1, int cols2)
     {
         double** new_matrix = (double**)malloc(rows1 * sizeof(double*));
+      
         for (int i = 0; i < rows1; i++) {
             new_matrix[i] = (double*)malloc(cols2 * sizeof(double));
         }

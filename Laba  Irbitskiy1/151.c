@@ -5,7 +5,7 @@
 
 //Задание 15
 
-
+/*
 int main()
 {
     int i, j, cnt_dig = 0, cnt_alpha = 0, cnt_ost = 0;
@@ -16,3 +16,4 @@ int main()
 }
 
 
+*/
