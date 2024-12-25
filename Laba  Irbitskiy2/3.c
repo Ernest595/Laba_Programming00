@@ -11,11 +11,11 @@ int main(int argc, char* argv[]) {
 	int err;
 	char* str = (char*)malloc(23 * sizeof(char));
 	int* str1 = (int*)malloc(12 * sizeof(int));
-	FILE* fptr = fopen("1.txt", "w");
+	FILE* fptr1 = fopen("1.txt", "w");
 
-	printf("resources for free: %p %p %p\n\n", str, fptr, str1);
+	printf("resources for free: %p %p %p\n\n", str, fptr1, str1);
 
-	err = free_resources('f', str, 'c', fptr, 'f', str1, 'w', str, 'f', NULL);
+	err = free_resources('f', str, 'c', fptr1, 'f', str1, 'w', str, 'f', NULL);
 
 	if (err != 0) {
 		printf("Error: \n");
