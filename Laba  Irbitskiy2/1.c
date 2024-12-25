@@ -6,7 +6,7 @@
 #define INCORRECT_BASE 1
 #define MEMORY_ALLOCATE_ERROR 2
 
-int convert_decimal_bin(int n,int r, char ** str);
+int convert_decimal(int n,int r, char ** str);
 
 int main() {
 
@@ -18,7 +18,7 @@ int main() {
 	printf("Enter base (2^r - enter r): ");
 	scanf("%d", &r);
 
-	err = convert_FROM_decimal_bin(n, r, &ans);
+	err = convert_decimal(n, r, &ans);
 	switch (err)
 	{
 		case 0:
@@ -38,7 +38,7 @@ int main() {
 }
 
 
-int convert_decimal_bin(int n, int r, char** str) {
+int convert_decimal(int n, int r, char** str) {
 
 	int base = 1 << r;
 		char* res;
@@ -50,7 +50,9 @@ int convert_decimal_bin(int n, int r, char** str) {
 
 		if (n == 0) {
 					*str = (char*)malloc(2 * sizeof(char));
-					if (*str == NULL) { return MEMORY_ALLOCATE_ERROR; }
+					if (*str == NULL) { 
+						return MEMORY_ALLOCATE_ERROR; 
+					}
 					*str[0] = '0';
 					*str[1] = '\0';
 					return 0;
@@ -88,7 +90,7 @@ int convert_decimal_bin(int n, int r, char** str) {
 				n >>= r;
 				res--;
 			}
-		
+			
 			return 0;
 		}
 
