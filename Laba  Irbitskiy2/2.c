@@ -6,6 +6,9 @@
 
 #define NOT_ENOUGH_ARGS 1
 #define TOO_MANY_ARGS 2
+#define MEMORY_ALLOCATE_ERROR 3
+#define UNKNOWN_FLAG 4
+
 
 int str_len(char* str);
 char* str_rev(char* str);
@@ -102,21 +105,127 @@ int main(int argc, char* argv[]) {
 		break;
 	}
 	
-
+	case 'c': {
+						int len = 0;
+						if (argc < 4) {
+						printf("Not enough arguments\n");
+							return 1;
+						}
 	
+						seed = atoi(argv[2]);
+						srand(seed);
 		
-	
+						char** str_arr = (char**)malloc((argc - 3) * sizeof(char*));
+						if (str_arr == NULL) {
+							return MEMORY_ALLOCATE_ERROR;
+						}
+						for (i = 0; i < argc-3; i++) {
+							len += str_len(argv[i + 3]);
+							str_arr[i] = argv[i + 3];
+						}
+		
+						for (i = 0; i < argc - 3; i++) {
+							j = rand() % (i + 1);
+							swap_str(&str_arr[i], &str_arr[j]);
+						}
+		
+					str = (char*)malloc((len + 1) * sizeof(char));
+						if (str == NULL) {
+							free(str_arr);
+						return MEMORY_ALLOCATE_ERROR;
+						}
+		
+						str[0] = '\0';
+						for (i = 0; i < argc - 3; i++) {
+							str_cat(str, str_arr[i]);
+						}
+		
+						printf("Concatenated string: %s", str);
+		
+						free(str_arr);
+						free(str);
+						break;
+					}
+					default: {
+						err = UNKNOWN_FLAG;
+						break;
+					}
+				}
+			}
 
-
-
-
-	
-
-	
-
-
-
-
-
-
+			if (err == NOT_ENOUGH_ARGS) 
+			{
+				printf("Not enough arguments");
+			}else if (err == UNKNOWN_FLAG) 
+			{
+				printf("Unknown flag");	
+			}else if (err == TOO_MANY_ARGS) 
+			{
+				printf("Too many arguments");
+			}
+			return 0;
+			
 }
+
+int str_len(char* str) {
+		int c = 0;
+	
+		while (*str != '\0') {
+			str++;
+			c += 1;
+		}
+	
+		return c;
+	}
+	
+	char* str_rev(char* str) {
+		int c = 0;
+		char r, l;
+		char* ptr = str;
+		while (*ptr != '\0') {
+			ptr++;
+			c += 1;
+		}
+		
+		for (int i = 0; i < (c / 2); i++) {
+			l = str[i];
+			r = str[c - i - 1];
+			str[i] = r;
+			str[c - i - 1] = l; 
+		}
+		
+		return str;
+	}
+	
+	char* str_cat(char* str1, char* str2) {
+		int i = 0, j = 0;
+		char* res = str1;
+		while (str1[i] != '\0')
+			i++;
+		while (str2[j] != '\0')
+		{
+			str1[i] = str2[j];
+			j++;
+			i++;
+		}
+		str1[i] = '\0';
+	
+		return str1;
+	}
+	
+	void swap_str(char** a, char** b) {
+		char* temp_str = *a;
+		*a = *b;
+		*b = temp_str;
+	}
+	
+	int random_int(int min, int max)
+	{
+		return min + rand() % (max + 1 - min);
+	}
+
+
+
+
+			
+
