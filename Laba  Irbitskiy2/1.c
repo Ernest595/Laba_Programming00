@@ -1,4 +1,4 @@
-
+/*
 #include<stdio.h>
 #include<time.h>
 #include<stdlib.h>
@@ -142,7 +142,7 @@ int convert_decimal(int n, int r, char** str) {
 }
 
 
-			
+			*/
 			
 
 

@@ -1,3 +1,4 @@
+/*
 #include <stdarg.h> 
 #include <stdio.h> 
 #include <stdlib.h> 
@@ -51,3 +52,4 @@ int freeresources(int flag, ...) {
 	va_end(valist);
 	return 0;
 }
+*/
