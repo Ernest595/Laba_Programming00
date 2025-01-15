@@ -1,3 +1,4 @@
+/*
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
@@ -199,3 +200,5 @@ int random_int(int min, int max)
 {
 	return min + rand() % (max + 1 - min);
 }
+
+*/
