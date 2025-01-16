@@ -1,4 +1,4 @@
-/*
+
 #include <stdio.h>
 #include <stdarg.h>
 #define NOT_ENOUGH_ARGS 1
@@ -9,20 +9,20 @@ int cross_product(int* o, int* a, int* b);
 int main() {
 	int err;
 	err = is_polygon_convex(4, 0, 0, 2, 0, 2, 2, 0, 2); // This polygon is really convex
-	//err = is_polygon_convex(5, 0, 0, 2, 0, 1, 1, 2, 2, 0, 2); // This polygon is really NOT convex
+
 	
 
 	switch (err)
 	{
 		case NOT_ENOUGH_ARGS:
-			printf("Not enough arguments");
+			return NOT_ENOUGH_ARGS;
 			break;
 		default:{
 			if (err == 1) {
-				printf("The polygon is convex");
+				return "The polygon is convex";
 			}
 			else {
-				printf("The polygon is NOT convex");
+				return "The polygon is NOT convex";
 			}
 	break;
 		}
@@ -77,7 +77,20 @@ int is_polygon_convex(int n, ...) {
 }
 
 int crossed_products(int* o, int* a, int* b) {
+	
+	if (o == NULL) {
+		return 0;
+	}
+
+	if (a == NULL) {
+		return 0;
+	}
+
+	if (b == NULL) {
+		return 0;
+	}
 	return (a[0] - o[0]) * (b[1] - o[1]) - (a[1] - o[1]) * (b[0] - o[0]);
 }
+ 
 
-*/
+

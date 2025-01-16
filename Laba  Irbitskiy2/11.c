@@ -1,3 +1,4 @@
+/*
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -194,3 +195,4 @@ char* processing_error(int err) {
 			return "Unknown error";
 	}
 }
+*/

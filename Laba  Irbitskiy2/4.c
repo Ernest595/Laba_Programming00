@@ -44,7 +44,7 @@ void substring_files(const char* substring, int numfiles, ...) {
                     k++;
                 }
                 if (k == substring_len) {
-                    printf("File: % s, Line : % d, Position : % d\n", file_name, line_num, char_index + j);
+                    printf("File: %s, Line : %d, Position : % d\n", file_name, line_num, char_index + j);
                     found = 1;
                 }
             }

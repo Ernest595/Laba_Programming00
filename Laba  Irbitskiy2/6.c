@@ -38,7 +38,7 @@ double polynomial_calculate(double à, int p, ...) {
 	a_0 = va_arg(args, double);
 	res = (double) a_0 * à;
 	for (i = 0; i < p; i++) {
-		if ((a = va_arg(args, double)) == NULL) {
+		if ((a = va_arg(args, double)) {
 			return NOT_ENOUGH_ARGS;
 		}
 		res += a;
