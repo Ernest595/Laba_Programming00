@@ -54,6 +54,12 @@
     <ClCompile Include="13.c">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="14.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="15.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="int_vector.h">

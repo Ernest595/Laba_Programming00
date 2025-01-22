@@ -5,7 +5,7 @@
 #include <ctype.h>
 #include <string.h>
 
-#include "../../libs/int_vector.h"
+#include "int_vector.h"
 #define MEMORY_ALLOCATE_ERROR 5
 #define NOT_ENOUGH_ARGS 1
 #define INCORRECT_BASE 2
@@ -14,7 +14,7 @@
 
 int sums_decomposition(int value, int*** result_decompositions, size_t
 	* result_decompositions_count, int allowed_equal_sum_components);
-int __decompositions_inner(int_vector** arr, int* decompositions_capacity, int* decompositions_count,
+int decompositions_inner(int_vector** arr, int* decompositions_capacity, int* decompositions_count,
 	int n, int_vector* temp_vec, int allowed_equal_sum_components);
 
 char* error_processing(int err);
@@ -60,7 +60,7 @@ int main() {
 	return 0;
 }
 
-int __decompositions_inner(int_vector** arr, int* decompositions_capacity, int* decompositions_count, int n, int_vector* temp_vec, int allowed_equal_sum_components) {
+int decompositions_inner(int_vector** arr, int* decompositions_capacity, int* decompositions_count, int n, int_vector* temp_vec, int allowed_equal_sum_components) {
 	int i = 0, j = 0, temp_int = 0, err;
 	if (n == 0) {
 		if (*decompositions_capacity < *decompositions_count)
@@ -90,7 +90,7 @@ int __decompositions_inner(int_vector** arr, int* decompositions_capacity, int* 
 		
 		if (temp_int == NULL || (allowed_equal_sum_components > 0 ? (k <= temp_int) : (k < temp_int)) ) {
 			int_vector_push_back(temp_vec, k);
-			err = __decompositions_inner(arr, decompositions_capacity, decompositions_count, n - k, temp_vec, allowed_equal_sum_components);
+			err = decompositions_inner(arr, decompositions_capacity, decompositions_count, n - k, temp_vec, allowed_equal_sum_components);
 			if (err) { return err; }
 			int_vector_pop_back(temp_vec, &i);
 		}
