@@ -1,6 +1,7 @@
 
 #include <stdio.h>
 #include <stdarg.h>
+/*
 #define NOT_ENOUGH_ARGS 1
 
 int is_polygon_convex(int n, ...);
@@ -93,4 +94,4 @@ int crossed_products(int* o, int* a, int* b) {
 }
  
 
-
+ */

@@ -1,3 +1,4 @@
+/*
 #include <stdio.h>
 #include <stdarg.h>
 #include <stdlib.h>
@@ -20,7 +21,7 @@ int main() {
 	char** results;
 	int** positions;
 	size_t results_count = 0;
-	char* find_str = "hello";
+	char* find_str = "";
 	char* str_1 = "Hello everybody! I want to talk about myself.";
 	char* str_2 = "How beautiful and sunny it is outside)";
 	char* str_3 = "hello WORLD!";
@@ -100,8 +101,8 @@ int substr(char* to_find, int case_sensitive, char*** results, int*** positions,
 	if (positions == NULL) { 
 		return 3; 
 	}
-	if (results_count == NULL) { 
-		return 4; 
+	if (results_count == NULL) {
+		return 4;
 	}
 
 	(*results) = (char**)malloc(size * sizeof(char*));
@@ -236,7 +237,7 @@ int substr(char* to_find, int case_sensitive, char*** results, int*** positions,
 	return 0;
 }
 
-char* processing_error(int err) {
+char* processing_error(int err){
 	switch (err)
 	{
 		case 1:
@@ -253,3 +254,5 @@ char* processing_error(int err) {
 			return "Unknown error";
 	}
 }
+
+*/
